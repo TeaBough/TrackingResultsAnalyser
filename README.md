@@ -19,3 +19,10 @@ You can you the scripts providing as first argument the file name :
 ```
 ./bin/bouncerate data.csv
 ```
+
+# Test
+
+```
+sbt test
+```
+
