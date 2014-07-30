@@ -1,12 +1,10 @@
 
 
-object SessionsAverage {
+object SessionsAverage extends App {
 
-  def main(args: Array[String]) {
-    val all = Data.getData
-    val avgSession = getAvgSession(all)
-    println("Session moyenne : " + avgSession + " min")
-  }
+  val all = Data.getData(args(0))
+  val avgSession = getAvgSession(all)
+  println("Session moyenne : " + avgSession + " min")
 
   def getAvgSession(all: List[List[Any]]): Long = {
     val sessions = all.groupBy(_.head)

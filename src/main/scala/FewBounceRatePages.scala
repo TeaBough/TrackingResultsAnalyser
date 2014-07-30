@@ -1,5 +1,7 @@
-object FewBounceRatePages {
-
+object FewBounceRatePages extends App {
+  val all = Data.getData(args(0))
+  val pages = getFewBounceRatePages(all)
+  println("Pages qui entraînent le moins de conversion : " + pages)
 
   def getFewBounceRatePages(all: List[List[String]]): List[String] = {
     val sessionWithCheckout = BounceRate.getSessionsWithCheckout(all)
@@ -12,8 +14,4 @@ object FewBounceRatePages {
     allPages.toList.diff(decreasedPopularPages) ::: decreasedPopularPages
   }
 
-  def main(args: Array[String]) {
-    val all = Data.getData
-    val bounceRate = getFewBounceRatePages(all)
-  }
 }
